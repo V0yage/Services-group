@@ -1,0 +1,52 @@
+body { font-family: 'Verdana'; }
+
+.translate-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 0;
+	overflow: hidden;
+	border-radius: 24px;
+	white-space: nowrap;
+}
+
+.translate-form > * {
+	padding: 15px 30px;
+	display: inline-block;
+	border: none;
+	outline: none;
+	font-size: 16px;
+}
+
+.translate-form [type="text"] {
+	padding-left: 30px;
+	width: 450px;
+	background: #eee;
+}
+
+.translate-form [type="submit"] {
+	cursor: pointer;
+	background: #ddd;
+	box-shadow: 0px 5px 7px 0 rgba(255,255,255,.2) inset,
+				0 -5px 7px 0 rgba(0,0,0,.1) inset;
+}
+
+.links {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.links p:first-child { color: #ddd; }
+
+.modal { position: fixed; top: 0; left: 0; width: 0; height: 100%; background: rgba(0,0,0,.5); z-index: 5; opacity: 0; transition: opacity .4s ease 0s, width 0s ease .4s; }
+.modal.show { width: 100%; opacity: 1; transition: opacity .4s ease 0s, width 0s ease 0s; }
+.modal .modal-content { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(1.07); padding: 7vh 9vh; background: white;/*  width: 60%; height: 60%; */ transition: transform .4s ease 0s; }
+.modal.show .modal-content { transform: translate(-50%, -50%); transition: transform 0s ease 0s; }
+.modal .modal-close-btn { position: absolute; right: -3px; top: -3px; transform: translate(100%, -100%); width: 30px; height: 30px; cursor: pointer; }
+.modal .modal-close-btn::before, .modal .modal-close-btn::after { content: ""; position: absolute; top: 50%; left: 50%; height: 100%; width: 3px; background: rgba(204, 204, 204, 0.81); }
+.modal .modal-close-btn::before { transform: translate(-50%, -50%) rotate(-45deg); }
+.modal .modal-close-btn::after { transform: translate(-50%, -50%) rotate(45deg); }
+.modal .modal-close-btn:hover::before, .modal .modal-close-btn:hover::after { background: white; }
+.modal .feedback fieldset > *:not(:last-child) { width: 75%; }
